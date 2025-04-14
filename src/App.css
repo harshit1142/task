@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+
+/* Global Styles */
+body,
+html,
+.app {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Login */
+.login-background{
+  background-color: #4f4a4a;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  padding: 20px;
+  min-height: 400px;
+  width: 50%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #070707;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-container input {
+  padding: 10px;
+  border: 1px solid #c4a2a2;
+  border-radius: 6px;
+  width: 50%;
+  max-width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  width: 50%;
+  max-width: 300px;
+}
+
+.remember-section {
+  width: 50%;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.remember{
+  display: flex;
+  align-items: center;
+}
+
+.forgot {
+  cursor: pointer;
+}
+
+/* Chat */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  min-width: 200px;
+  background: #f2f2f2;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.new-chat {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.history {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.nav-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.sidebar-footer p {
+  font-size: 12px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-header {
+  margin: 20px 0 10px;
+}
+
+.chat-header h3 {
+  margin: 0 0 5px 0;
+}
+
+.chat-box {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message p {
+  padding: 12px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  margin: 5px 0;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+  
+
+.chat-input {
+  position: fixed;
+  width: 70%;
+  bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.send-button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.hamburger{
+  display: none;
+}
+
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display:none;
+    flex-direction: row;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 540px) {
+  .login-container{
+    width: 100%;
   }
+  .chat-header{
+    font-size: 12px;
+  }
+  .chat-message{
+    font-size: 14px;
+  }
+  .hamburger{
+    display: flex;
+    cursor: pointer;
+  }
+    .show {
+      position: absolute;
+      top: 50px;
+      width: 88%;
+      height: 86%;
+      background: #f2f2f2;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    }
 }
